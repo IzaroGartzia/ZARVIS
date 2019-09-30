@@ -13,6 +13,7 @@ public class eleccCentro {
     private JButton bsalir;
     private JButton bVolver;
     private JButton bCerrarSesion;
+
     private JPanel botonesControl;
     private JTextArea TAInformacion;
     private JLabel LTitulo;
