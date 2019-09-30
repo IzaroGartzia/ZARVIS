@@ -2,7 +2,7 @@ package com.zarvis.vista;
 
 import javax.swing.*;
 
-public class Inicio {
+class Inicio {
     private JPanel background;
     private JPanel panelPrincipal;
     private JPanel PanelSuperior;
