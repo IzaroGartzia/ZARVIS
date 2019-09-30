@@ -2,16 +2,26 @@ package com.zarvis.vista;
 
 import javax.swing.*;
 
-public class inicio {
+public class Inicio {
     private JPanel background;
     private JPanel panelPrincipal;
     private JPanel PanelSuperior;
     private JPanel PanelMedio;
     private JLabel NombreEmpresa;
-    private JTextField textField1;
-    private JTextField textField2;
+    private JTextField textUsuario;
+    private JTextField textPass;
+    private JButton but_entrar;
+    private JButton but_salir;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+
+    public static void main (String[] args)
+    {
+        JFrame frame=new JFrame("Inicio");
+        frame.setContentPane(new Inicio().background);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
+
 }
+
