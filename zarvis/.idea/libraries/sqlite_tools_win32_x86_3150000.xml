@@ -2,6 +2,7 @@
   <library name="sqlite-tools-win32-x86-3150000">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/sqlite-tools-win32-x86-3150000.zip!/sqlite-tools-win32-x86-3150000" />
+      <root url="jar://$USER_HOME$/Downloads/db4o-8.0.276.16149-java/db4o-8.0/lib/db4o-8.0.276.16149-all-java5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
