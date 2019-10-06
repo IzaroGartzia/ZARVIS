@@ -11,4 +11,5 @@ public class Administrador {
     private JButton clienteButton;
     private JButton volverButton;
     private JButton cerrarSesiónButton;
+    private JButton metadatosButton;
 }
