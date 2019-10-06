@@ -37,6 +37,10 @@ public class Empleado {
     }
 
     //Getter y Setter de la clase
+    public String getDni() {
+        return dni;
+    }
+
     public String getNombre() {
         return nombre;
     }
