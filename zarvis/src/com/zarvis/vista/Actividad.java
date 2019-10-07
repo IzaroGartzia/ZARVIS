@@ -5,21 +5,22 @@ public class Actividad {
     //Atributos de las clase
     private int id;
     private String nombre;
-    private Cliente [] clientes = new Cliente[10];
+    private Cliente[] clientes = new Cliente[10];
     private double precio;
     private String dia;
     private String hora;
-
+    private CentroCivico[] centroCivicos;
 
 
     //Constructor Actividad completo
-    public Actividad(int id, String nombre, Cliente[] clientes, double precio, String dia, String hora) {
+    public Actividad(int id, String nombre, Cliente[] clientes, double precio, String dia, String hora, CentroCivico[] centroCivicos) {
         this.id = id;
         this.nombre = nombre;
         this.clientes = clientes;
         this.precio = precio;
         this.dia = dia;
         this.hora = hora;
+        this.centroCivicos = centroCivicos;
     }
 
     //Contructor Actividad sin array de clientes
@@ -29,6 +30,10 @@ public class Actividad {
         this.precio = precio;
         this.dia = dia;
         this.hora = hora;
+    }
+
+    public Actividad(int id) {
+        this.id = id;
     }
 
     //Getter y setter de casi todo

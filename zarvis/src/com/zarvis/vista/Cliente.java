@@ -13,9 +13,10 @@ public class Cliente {
     private String fechabaja;
     private Actividad[]actividades;
     private Sancion [] sanciones;
+    private CentroCivico [] centroCivicos;
 
 
-    public Cliente(String dni, String nombre, String apellido, int edad, String cargo, String profesion, String fechaalta, String fechabaja, Actividad[] actividades) {
+    public Cliente(String dni, String nombre, String apellido, int edad, String cargo, String profesion, String fechaalta, String fechabaja, Actividad[] actividades, CentroCivico[]centroCivicos) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -25,9 +26,10 @@ public class Cliente {
         this.fechaalta = fechaalta;
         this.fechabaja = fechabaja;
         this.actividades = actividades;
+        this.centroCivicos = centroCivicos;
     }
 
-    public Cliente(String dni, String nombre, String apellido, int edad, String cargo, String profesion, String fechaalta, String fechabaja, Actividad[] actividades, Sancion[] sanciones) {
+    public Cliente(String dni, String nombre, String apellido, int edad, String cargo, String profesion, String fechaalta, String fechabaja, Actividad[] actividades, Sancion[] sanciones,CentroCivico[]centroCivicos) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,6 +40,7 @@ public class Cliente {
         this.fechabaja = fechabaja;
         this.actividades = actividades;
         this.sanciones = sanciones;
+        this.centroCivicos = centroCivicos;
     }
 
     public Cliente(String dni, String nombre, String apellido, int edad, String cargo, String profesion, String fechaalta, String fechabaja) {
@@ -49,6 +52,13 @@ public class Cliente {
         this.profesion = profesion;
         this.fechaalta = fechaalta;
         this.fechabaja = fechabaja;
+    }
+
+    public Cliente(String dni) {
+        this.dni = dni;
+    }
+
+    public Cliente() {
     }
 
     public String getNombre() {
@@ -121,5 +131,13 @@ public class Cliente {
 
     public void setSanciones(Sancion[] sanciones) {
         this.sanciones = sanciones;
+    }
+
+    public CentroCivico[] getCentroCivicos() {
+        return centroCivicos;
+    }
+
+    public void setCentroCivicos(CentroCivico[] centroCivicos) {
+        this.centroCivicos = centroCivicos;
     }
 }

@@ -17,4 +17,13 @@ public class eleccCentro {
     private JPanel botonesControl;
     private JTextArea TAInformacion;
     private JLabel LTitulo;
+    private Inicio inicio;
+
+    public eleccCentro(Inicio inicio) {
+        JFrame frame = new JFrame("eleccCentro");
+        frame.setContentPane(contenedorPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 }

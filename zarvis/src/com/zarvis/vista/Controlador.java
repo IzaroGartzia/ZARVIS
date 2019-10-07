@@ -55,7 +55,6 @@ public class Controlador {
 
         while (result.hasNext()) {
 
-
             switch (nombre) {
                 case "Actividad":
 
