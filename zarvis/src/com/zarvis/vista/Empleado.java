@@ -11,11 +11,12 @@ public class Empleado {
     private String fechaalta;
     private String fechabaja;
     private Actividad [] actividades;
+    private CentroCivico centroCivico;
 
     //Constructores de la clase
 
 
-    public Empleado(String dni, String nombre, String apellido, int edad, String cargo, String fechaalta, String fechabaja) {
+    public Empleado(String dni, String nombre, String apellido, int edad, String cargo, String fechaalta, String fechabaja, CentroCivico centroCivico) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,6 +24,7 @@ public class Empleado {
         this.cargo = cargo;
         this.fechaalta = fechaalta;
         this.fechabaja = fechabaja;
+        this.centroCivico = centroCivico;
     }
 
    public Empleado(String dni, String nombre, String apellido, int edad, String cargo, String fechaalta, String fechabaja, Actividad[] actividades) {
@@ -33,7 +35,11 @@ public class Empleado {
         this.cargo = cargo;
         this.fechaalta = fechaalta;
         this.fechabaja = fechabaja;
-        //this.actividades = actividades;
+        this.actividades = actividades;
+    }
+
+    public Empleado(String dni) {
+        this.dni = dni;
     }
 
     //Getter y Setter de la clase
