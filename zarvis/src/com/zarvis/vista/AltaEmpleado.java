@@ -122,7 +122,7 @@ public class AltaEmpleado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                AltaBajaModificacion pantallaAnterior = new AltaBajaModificacion(altaEmpleado);
+                AltaBajaModificacion pantallaAnterior = new AltaBajaModificacion();
 
             }
         });
