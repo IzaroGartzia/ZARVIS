@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-tools-win32-x86-3150000" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.17" level="application" />
   </component>
 </module>
