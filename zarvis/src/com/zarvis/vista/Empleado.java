@@ -10,7 +10,7 @@ public class Empleado {
     private String cargo;
     private String fechaalta;
     private String fechabaja;
-    private Actividad [] actividades;
+    private Actividad[] actividades;
     private CentroCivico centroCivico;
 
     //Constructores de la clase
@@ -38,7 +38,7 @@ public class Empleado {
         this.actividades = actividades;
     }
 
-    public Empleado(String dni) {
+    public Empleado(String dni, String text, String apellidoTextFieldText, int i, String cargoTextFieldText, String fechaAltaTextFieldText, String fechaBajaTextFieldText, Object o, Object o1) {
         this.dni = dni;
     }
 

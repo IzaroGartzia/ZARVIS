@@ -11,4 +11,12 @@ public class BuscarActividades {
     private JPanel pane3;
     private JPanel pane2;
     private JButton butVolver;
+
+    public BuscarActividades() {
+        JFrame frame = new JFrame("BuscarActividades");
+        frame.setContentPane(PanelPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 }
