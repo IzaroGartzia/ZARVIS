@@ -14,8 +14,6 @@ public class Empleado {
     private CentroCivico centroCivico;
 
     //Constructores de la clase
-
-
     public Empleado(String dni, String nombre, String apellido, int edad, String cargo, String fechaalta, String fechabaja, CentroCivico centroCivico) {
         this.dni = dni;
         this.nombre = nombre;

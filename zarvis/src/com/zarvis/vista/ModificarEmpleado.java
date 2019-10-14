@@ -108,7 +108,7 @@ public class ModificarEmpleado {
                 Empleado empleadoModif = new Empleado(DniTextField.getText(), NombreTextField.getText(),
                                                       ApellidoTextField.getText(), Integer.parseInt(EdadTextField.getText()),
                                                       CargoTextField.getText(), FechaAltaTextField.getText(),
-                                                      FechaBajaTextField.getText(), null,null);
+                                                      FechaBajaTextField.getText(), (Actividad[]) null);
 
             }
         });

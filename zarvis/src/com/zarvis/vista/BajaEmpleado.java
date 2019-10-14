@@ -34,12 +34,12 @@ public class BajaEmpleado {
 
 
             // EMPLEADOS DE PRUEBA
-         /*   Empleado e1 = new Empleado("123", "Izaro", "Garcia", 23, "Jefa", "07.10.2019", "31.12.9999", null);
-            Empleado e2 = new Empleado("222", "Isabel", "Montero", 12, "Profesor", "23.10.2019", "31.12.9999", null);
-            Empleado e3 = new Empleado("333", "David", "Rajado", 27, "Secretario", "09.10.2019", "31.12.9999", null);
-            Empleado e4 = new Empleado("444", "Markel", "Perez", 25, "Entrenador", "10.10.2019", "31.12.9999", null);
-            Empleado e5 = new Empleado("555", "Lorena", "Gomez", 19, "Jefa Superior", "01.10.2019", "31.12.9999", null);
-*/
+            Empleado e1 = new Empleado("123", "Izaro", "Garcia", 23, "Jefa", "07.10.2019", "31.12.9999", (Actividad[]) null);
+            Empleado e2 = new Empleado("222", "Isabel", "Montero", 12, "Profesor", "23.10.2019", "31.12.9999", (Actividad[]) null);
+            Empleado e3 = new Empleado("333", "David", "Rajado", 27, "Secretario", "09.10.2019", "31.12.9999", (Actividad[]) null);
+            Empleado e4 = new Empleado("444", "Markel", "Perez", 25, "Entrenador", "10.10.2019", "31.12.9999", (Actividad[]) null);
+            Empleado e5 = new Empleado("555", "Lorena", "Gomez", 19, "Jefa Superior", "01.10.2019", "31.12.9999", (Actividad[]) null);
+
             // Se rellena el array con los empleados
            // Empleado[] empleados = new Empleado[]{e1, e2, e3, e4, e5};
 

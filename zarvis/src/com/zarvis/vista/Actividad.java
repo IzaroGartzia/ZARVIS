@@ -32,6 +32,11 @@ public class Actividad {
         this.hora = hora;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
     public Actividad(int id) {
         this.id = id;
     }
