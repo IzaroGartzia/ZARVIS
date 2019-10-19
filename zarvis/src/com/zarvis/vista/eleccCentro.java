@@ -12,41 +12,127 @@ public class eleccCentro {
     private JPanel boton2;
     private JPanel boton3;
     private JPanel footer;
-    private JButton bsalir;
     private JButton bVolver;
     private JButton bCerrarSesion;
 
     private JPanel botonesControl;
     private JTextArea TAInformacion;
     private JLabel LTitulo;
-//    private Inicio inicio;
     private JButton butSanmartin;
     private JButton butZabalgana;
     private JButton butArriaga;
     private Inicio inicio;
-    JFrame frame = new JFrame("eleccCentro");
 
-//    public eleccCentro(Inicio inicio) {
-//        JFrame frame = new JFrame("eleccCentro");
-//        frame.setContentPane(contenedorPrincipal);
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setVisible(true);
-//    }
-    public eleccCentro() {
+
+    public eleccCentro(int tipoUsuario, String nombreUsuario) {
+
+        // Se guardan en unas variables el tipo de usuario y el nombre de usuario
+        int tipo = tipoUsuario;
+        String nomUsu = nombreUsuario;
+
+        JFrame frame = new JFrame("eleccCentro");
         frame.setContentPane(contenedorPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
 
+        // Botón San Martín
         butSanmartin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
-                VentanaCliente ventanaCliente = new VentanaCliente();
                 frame.dispose();
+
+                // Se controla el tipo de usuario que ha accedido
+                if(tipoUsuario == 1){
+
+                    // Se muestra la pantalla Administrador
+                    Administrador admin = new Administrador("SanMartin");
+                }
+                else if(tipoUsuario == 2){
+
+                    // Se muestra la pantalla Ventana Cliente
+                    VentanaCliente ventanaCliente = new VentanaCliente("SanMartin", nombreUsuario);
+                }
+
+
+            }
+        });
+
+        // Botón Zabalgana
+        butZabalgana.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+
+                // Se controla el tipo de usuario que ha accedido
+                if(tipoUsuario == 1){
+
+                    // Se muestra la pantalla Administrador
+                    Administrador admin = new Administrador("Zabalgana");
+                }
+                else if(tipoUsuario == 2){
+
+                    // Se muestra la pantalla Ventana Cliente
+                    VentanaCliente ventanaCliente = new VentanaCliente("Zabalgana", nombreUsuario);
+                }
+
+            }
+        });
+
+        // Botón Arriaga
+        butArriaga.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+
+                // Se controla el tipo de usuario que ha accedido
+                if(tipoUsuario == 1){
+
+                    // Se muestra la pantalla Administrador
+                    Administrador admin = new Administrador("Arriaga");
+                }
+                else if(tipoUsuario == 2){
+
+                    // Se muestra la pantalla Ventana Cliente
+                    VentanaCliente ventanaCliente = new VentanaCliente("Arriaga", nombreUsuario);
+                }
+
+            }
+        });
+
+        // Botón Atrás
+        bVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                frame.dispose();
+                Inicio inicio = new Inicio();
+
+            }
+        });
+
+        // Botón Cerrar Sesión
+        bCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                frame.dispose();
+
+                // Se sale del programa
+                System.exit(0);
+
             }
         });
     }
+
+    public eleccCentro(){
+
+        JFrame frame = new JFrame("eleccCentro");
+        frame.setContentPane(contenedorPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
+    }
+
 }

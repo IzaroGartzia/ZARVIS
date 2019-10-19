@@ -13,19 +13,8 @@ public class BajaEmpleado {
     private JComboBox EmpleadoComboBox;
 
 
-    // MAIN PARA QUE SE EJECUTE LA PANTALLA BAJAEMPLEADO
-    // LUEGO HAY QUE BORRAR ESTE MAIN
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("BajaEmpleado");
-        frame.setContentPane(new BajaEmpleado().PanelPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
         public BajaEmpleado () {
 
-            // Mostrar la pantalla BajaEmpleado
             JFrame frame = new JFrame("BajaEmpleado");
             frame.setContentPane(PanelPrincipal);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,8 +48,10 @@ public class BajaEmpleado {
                 @Override
                 public void actionPerformed(ActionEvent e) {
 
-                    // Se vuelve a la pantalla AltaBajaModificacion
-                    AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion();
+                    frame.dispose();
+
+                    eleccCentro eleccCentro = new eleccCentro();
+
 
                 }
             });
@@ -69,6 +60,8 @@ public class BajaEmpleado {
             GuardarButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+
+                    frame.dispose();
 
                     // Se obtiene el Empleado que se ha seleccionado en el JComboBox
                     String empleadoSeleccionado = (String) EmpleadoComboBox.getSelectedItem();

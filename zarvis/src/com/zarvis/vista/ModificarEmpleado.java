@@ -24,17 +24,14 @@ public class ModificarEmpleado {
     private JButton eliminarButton;
     private JPanel PanelActividades;
 
-    // MAIN PARA QUE SE EJECUTE LA PANTALLA MODIFICAREMPLEADO
-    // LUEGO HAY QUE BORRAR ESTE MAIN
-    public static void main(String[] args) {
+
+    public ModificarEmpleado() {
+
         JFrame frame = new JFrame("ModificarEmpleado");
-        frame.setContentPane(new ModificarEmpleado().PanelPrincipal);
+        frame.setContentPane(PanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-    }
-
-    public ModificarEmpleado() {
 
         // Se deshabilita el textfield del DNI para que no se pueda modificar
         DniTextField.setEnabled(false);
@@ -80,8 +77,8 @@ public class ModificarEmpleado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // Se vuelve a la pantalla AltaBajaModificacion
-                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion();
+                eleccCentro eleccCentro = new eleccCentro();
+
             }
         });
 

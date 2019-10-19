@@ -19,19 +19,18 @@ public class AltaEmpleado {
     private JButton AtrasButton;
     private JButton GuardarButton;
     private JPanel PanelTItulo;
-    private AltaEmpleado altaEmpleado;
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("AltaEmpleado");
-        frame.setContentPane(new AltaEmpleado().Panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
+
+
 
     public AltaEmpleado() {
 
-        altaEmpleado = this;
+        JFrame frame = new JFrame("AltaEmpleado");
+        frame.setContentPane(Panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
 
         // Se crea un ArrayList de actividades
         ArrayList<Actividad> listActividad = new ArrayList<Actividad>();
@@ -75,6 +74,8 @@ public class AltaEmpleado {
         GuardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                frame.dispose();
 
                 // Se crea un array que recoja las actividades que se han seleccionado
                 Object[] activString = new Object[ActividadesList.getSelectedIndices().length];
@@ -122,7 +123,10 @@ public class AltaEmpleado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                AltaBajaModificacion pantallaAnterior = new AltaBajaModificacion();
+                frame.dispose();
+
+                eleccCentro eleccCentro = new eleccCentro();
+
 
             }
         });

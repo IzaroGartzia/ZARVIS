@@ -13,7 +13,8 @@ public class AltaBajaModificacion {
     private JButton bajaButton;
     private AltaEmpleado alta;
 
-    public AltaBajaModificacion() {
+
+    public AltaBajaModificacion(String elemento) {
 
         JFrame frame = new JFrame("AltaBajaModificacion");
         frame.setContentPane(Panel1);
@@ -21,32 +22,89 @@ public class AltaBajaModificacion {
         frame.pack();
         frame.setVisible(true);
 
-        // Botón ALta Empleado
+        // Botón Alta
         AltaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                frame.dispose();
+
+                // Se controla que elemento se quiere dar de alta
+                if(elemento == "Empleado")
+                {
+                    AltaEmpleado altaEmpleado = new AltaEmpleado();
+
+                }
+                else if(elemento == "Actividad")
+                {
+                    AltaActividad altaActividad = new AltaActividad();
+                }
+                else if(elemento == "Cliente")
+                {
+                    AltaCliente altaCliente = new AltaCliente();
+                }
+
             }
         });
 
-        // Botón Baja Empleado
+        // Botón Baja
         bajaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
 
-                // Se va a la pantalla BajaEmpleado
-                BajaEmpleado bajaEmpleado = new BajaEmpleado();
+                // Se controla que elemento se quiere dar de baja
+                if(elemento == "Empleado")
+                {
+                    BajaEmpleado bajaEmpleado = new BajaEmpleado();
+
+                }
+                else if(elemento == "Actividad")
+                {
+                    BajaActividad bajaActividad = new BajaActividad();
+
+                }
+                else if(elemento == "Cliente")
+                {
+                    BajaCliente bajaCliente = new BajaCliente();
+                }
 
             }
         });
 
-        // Botón Modificar Empleado
+        // Botón Modificar
         modificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+
+                // Se controla que elemento se quiere modificar
+                if(elemento == "Empleado")
+                {
+                    ModificarEmpleado modificarEmpleado = new ModificarEmpleado();
+
+                }
+                else if(elemento == "Actividad")
+                {
+                    ModificarActividad modificarActividad = new ModificarActividad();
+
+                }
+                else if(elemento == "Cliente")
+                {
+                    ModificarCliente modificarCliente = new ModificarCliente();
+                }
 
             }
         });
+    }
+
+    public AltaBajaModificacion() {
+
+        JFrame frame = new JFrame("AltaBajaModificacion");
+        frame.setContentPane(Panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
 

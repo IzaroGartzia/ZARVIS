@@ -24,7 +24,9 @@ public class VentanaCliente {
     private JButton verMisActividadesButton;
     JFrame frame = new JFrame("VentanaCliente");
 
-    public VentanaCliente() {
+
+
+    public VentanaCliente(String centroCivico, String nombreUsuario) {
         frame.setContentPane(PanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -37,12 +39,62 @@ public class VentanaCliente {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+
+        // Se rellena el JComboBox con las actividades del centro civico seleccioando
+
+        // SE ACCEDE A LA BBDD con el CENTROCIVICO que se pasa como parámetro y se recogen
+        // todas las actividades
+
+        // Se rellena el array con las actividades
+//        Actividad[] actividades = new Actividad[]{};
+//
+//            // Se deshabilita el JComboBox
+//             comboActividades.setEditable(false);
+//
+//            // Se rellena el JComboBox con los nombres de las actividades
+//                for (int i = 0; i < actividades.length; i++) {
+//
+//                    comboActividades.addItem(actividades[i].getNombre());
+//
+//                }
+
+
+        // Botón Buscar Actividades
         butBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
+
+                // Se muestra la pantalla BuscarActividades
                 BuscarActividades buscarActividades = new BuscarActividades();
+
+            }
+        });
+
+        // Botón Apuntarse
+        butApuntarse.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                // En nombre usuario tenemos el nombre de cliente
+//                nombreUsuario
+
+                String actividad = (String) comboActividades.getSelectedItem();
+
+                // SE ACCEDE A LA BASE DE DATOS PARA HACER UN INSERT DEL CLIENTE EN ESA ACTIVIDAD
+
+            }
+        });
+
+        // Botón Ver mis actividades
+        verMisActividadesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                VerMisActividades verMisActividades = new VerMisActividades(nombreUsuario);
+
             }
         });
     }
@@ -66,5 +118,13 @@ public class VentanaCliente {
         public boolean isBorderOpaque() {
             return true;
         }
+    }
+
+
+    public VentanaCliente(){
+        frame.setContentPane(PanelPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

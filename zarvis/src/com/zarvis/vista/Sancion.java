@@ -2,6 +2,8 @@ package com.zarvis.vista;
 
 public class Sancion {
 
+    // CREAR PANTALLA PARA GESTIONAR LAS SANCIONES !!!!!!!!!!
+
     //Atributos de la sanción
     private int id;
     private String nombre;
@@ -28,4 +30,5 @@ public class Sancion {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
 }
