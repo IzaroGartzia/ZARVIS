@@ -9,18 +9,21 @@ public class Actividad {
     private double precio;
     private String dia;
     private String hora;
-    private CentroCivico[] centroCivicos;
-
+    private CentroCivico centroCivico;
+    private Empleado empleado;
 
     //Constructor Actividad completo
-    public Actividad(int id, String nombre, Cliente[] clientes, double precio, String dia, String hora, CentroCivico[] centroCivicos) {
+
+
+    public Actividad(int id, String nombre, Cliente[] clientes, double precio, String dia, String hora, CentroCivico centroCivico, Empleado empleado) {
         this.id = id;
         this.nombre = nombre;
         this.clientes = clientes;
         this.precio = precio;
         this.dia = dia;
         this.hora = hora;
-        this.centroCivicos = centroCivicos;
+        this.centroCivico = centroCivico;
+        this.empleado = empleado;
     }
 
     //Contructor Actividad sin array de clientes
@@ -72,6 +75,14 @@ public class Actividad {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     //Getter de nombre solo metodo de lectura.
