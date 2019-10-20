@@ -21,7 +21,7 @@ public class ModificarCliente {
     private JPanel panel3;
     private JComboBox DNIcomboBox;
 
-    public ModificarCliente() {
+    public ModificarCliente(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
         JFrame frame = new JFrame("ModificarCliente");
         frame.setContentPane(panel1);
@@ -52,6 +52,8 @@ public class ModificarCliente {
 
                 frame.dispose();
 
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
+
                 // Se recoge el dni del cliente que se ha seleccionado
                 String dniSelec = (String) DNIcomboBox.getSelectedItem();
 
@@ -76,7 +78,7 @@ public class ModificarCliente {
 
                 frame.dispose();
 
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }

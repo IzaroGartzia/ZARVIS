@@ -26,10 +26,6 @@ public class eleccCentro {
 
     public eleccCentro(int tipoUsuario, String nombreUsuario) {
 
-        // Se guardan en unas variables el tipo de usuario y el nombre de usuario
-        int tipo = tipoUsuario;
-        String nomUsu = nombreUsuario;
-
         JFrame frame = new JFrame("eleccCentro");
         frame.setContentPane(contenedorPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,12 +42,12 @@ public class eleccCentro {
                 if(tipoUsuario == 1){
 
                     // Se muestra la pantalla Administrador
-                    Administrador admin = new Administrador("SanMartin");
+                    Administrador admin = new Administrador(tipoUsuario, nombreUsuario, "SanMartin");
                 }
                 else if(tipoUsuario == 2){
 
                     // Se muestra la pantalla Ventana Cliente
-                    VentanaCliente ventanaCliente = new VentanaCliente("SanMartin", nombreUsuario);
+                    VentanaCliente ventanaCliente = new VentanaCliente("SanMartin", tipoUsuario, nombreUsuario);
                 }
 
 
@@ -68,12 +64,12 @@ public class eleccCentro {
                 if(tipoUsuario == 1){
 
                     // Se muestra la pantalla Administrador
-                    Administrador admin = new Administrador("Zabalgana");
+                    Administrador admin = new Administrador(tipoUsuario, nombreUsuario,"Zabalgana");
                 }
                 else if(tipoUsuario == 2){
 
                     // Se muestra la pantalla Ventana Cliente
-                    VentanaCliente ventanaCliente = new VentanaCliente("Zabalgana", nombreUsuario);
+                    VentanaCliente ventanaCliente = new VentanaCliente("Zabalgana", tipoUsuario, nombreUsuario);
                 }
 
             }
@@ -89,12 +85,12 @@ public class eleccCentro {
                 if(tipoUsuario == 1){
 
                     // Se muestra la pantalla Administrador
-                    Administrador admin = new Administrador("Arriaga");
+                    Administrador admin = new Administrador(tipoUsuario, nombreUsuario, "Arriaga");
                 }
                 else if(tipoUsuario == 2){
 
                     // Se muestra la pantalla Ventana Cliente
-                    VentanaCliente ventanaCliente = new VentanaCliente("Arriaga", nombreUsuario);
+                    VentanaCliente ventanaCliente = new VentanaCliente("Arriaga", tipoUsuario, nombreUsuario);
                 }
 
             }
@@ -123,16 +119,6 @@ public class eleccCentro {
 
             }
         });
-    }
-
-    public eleccCentro(){
-
-        JFrame frame = new JFrame("eleccCentro");
-        frame.setContentPane(contenedorPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-
     }
 
 }

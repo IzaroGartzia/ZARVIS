@@ -26,11 +26,13 @@ public class VentanaCliente {
 
 
 
-    public VentanaCliente(String centroCivico, String nombreUsuario) {
+    public VentanaCliente(String centroCivico, int tipoUsuario, String nombreUsuario) {
+
         frame.setContentPane(PanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
 // Codigo para insertar una imagen en un jpane
         try {
             BgBorder borde = new BgBorder(ImageIO.read(new File("Imagenes\\images.jpg")));
@@ -68,7 +70,7 @@ public class VentanaCliente {
                 frame.dispose();
 
                 // Se muestra la pantalla BuscarActividades
-                BuscarActividades buscarActividades = new BuscarActividades();
+                BuscarActividades buscarActividades = new BuscarActividades(centroCivico, tipoUsuario, nombreUsuario);
 
             }
         });
@@ -85,6 +87,9 @@ public class VentanaCliente {
 
                 // SE ACCEDE A LA BASE DE DATOS PARA HACER UN INSERT DEL CLIENTE EN ESA ACTIVIDAD
 
+                // Mostrar un JOptionpane en plan que se ha apuntado correctamente
+                JOptionPane.showMessageDialog(null, "Te has apuntado a la actividad.");
+
             }
         });
 
@@ -93,7 +98,9 @@ public class VentanaCliente {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                VerMisActividades verMisActividades = new VerMisActividades(nombreUsuario);
+                frame.dispose();
+
+                VerMisActividades verMisActividades = new VerMisActividades(centroCivico, tipoUsuario, nombreUsuario);
 
             }
         });
@@ -121,10 +128,4 @@ public class VentanaCliente {
     }
 
 
-    public VentanaCliente(){
-        frame.setContentPane(PanelPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
 }

@@ -12,7 +12,7 @@ public class VerMisActividades {
     private JList listActividades;
 
 
-    public VerMisActividades(String nombreUsuario) {
+    public VerMisActividades(String centroCivico, int tipoUsuario, String nombreUsuario) {
 
         JFrame frame = new JFrame("VerMisActividades");
         frame.setContentPane(panelPrincipal);
@@ -54,7 +54,7 @@ public class VerMisActividades {
 
                 frame.dispose();
 
-                VentanaCliente ventanaCliente = new VentanaCliente();
+                VentanaCliente ventanaCliente = new VentanaCliente(centroCivico, tipoUsuario, nombreUsuario);
 
             }
         });

@@ -11,10 +11,10 @@ public class MostrarMetadatos {
     private JButton AtrasButton;
     private JTextPane datosMetadatos;
 
-    public MostrarMetadatos() {
+    public MostrarMetadatos(int tipoUsuario, String nombreUsuario, String nombreBD) {
 
 
-        // HAY QUE RELLENAR EL JTEXTPANE DATOSMETADOS
+        // HAY QUE RELLENAR EL JTEXTPANE DATOSMETADOS con los metadatos de la bd nombreBD
 
         // Página donde se muestra como se rellena...
 //        https://codigo--java.blogspot.com/2014/05/uso-basico-de-elementos-swing-con_28.html
@@ -24,7 +24,7 @@ public class MostrarMetadatos {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                eleccCentro eleccCentro = new eleccCentro();
+                eleccCentro eleccCentro = new eleccCentro(tipoUsuario, nombreUsuario);
 
 
             }

@@ -15,7 +15,7 @@ public class BuscarActividades {
     private JPanel pane2;
     private JButton butVolver;
 
-    public BuscarActividades() {
+    public BuscarActividades(String centroCivico, int tipoUsuario, String nombreUsuario) {
         JFrame frame = new JFrame("BuscarActividades");
         frame.setContentPane(PanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +66,7 @@ public class BuscarActividades {
 
                 frame.dispose();
 
-                VentanaCliente ventanaCliente = new VentanaCliente();
+                VentanaCliente ventanaCliente = new VentanaCliente(centroCivico, tipoUsuario, nombreUsuario);
             }
         });
     }

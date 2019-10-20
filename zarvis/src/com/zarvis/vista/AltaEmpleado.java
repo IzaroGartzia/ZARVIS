@@ -22,8 +22,7 @@ public class AltaEmpleado {
 
 
 
-
-    public AltaEmpleado() {
+    public AltaEmpleado(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
         JFrame frame = new JFrame("AltaEmpleado");
         frame.setContentPane(Panel1);
@@ -77,6 +76,8 @@ public class AltaEmpleado {
 
                 frame.dispose();
 
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
+
                 // Se crea un array que recoja las actividades que se han seleccionado
                 Object[] activString = new Object[ActividadesList.getSelectedIndices().length];
 
@@ -118,14 +119,14 @@ public class AltaEmpleado {
             }
         });
 
-        // VOLVER A LA PANTALLA AltaBajaModificacion
+        // VOLVER A LA PANTALLA ADMINISTRADOR
         AtrasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
 
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }

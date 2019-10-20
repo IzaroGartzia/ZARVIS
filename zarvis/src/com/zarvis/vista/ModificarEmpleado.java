@@ -25,7 +25,7 @@ public class ModificarEmpleado {
     private JPanel PanelActividades;
 
 
-    public ModificarEmpleado() {
+    public ModificarEmpleado(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
         JFrame frame = new JFrame("ModificarEmpleado");
         frame.setContentPane(PanelPrincipal);
@@ -36,17 +36,19 @@ public class ModificarEmpleado {
         // Se deshabilita el textfield del DNI para que no se pueda modificar
         DniTextField.setEnabled(false);
 
-        // Se rellena el ActividadesList con las actividades del empleado
-        Actividad a1 = new Actividad(1, "Futbol", null, 10, null, null, null);
-        Actividad a2 = new Actividad(2, "Baloncetos", null, 20, null, null, null);
-        Actividad[] actividades = new Actividad[]{a1, a2};
 
-        // Se rellena el NuevasList con todas las demás actividades del centro que pertenece el empleado
-        Actividad a3 = new Actividad(3, "Ping-Pong", null, 20, null, null, null);
-        Actividad a4 = new Actividad(4, "Zumba", null, 20, null, null, null);
-        Actividad a5 = new Actividad(5, "Aerobic", null, 20, null, null, null);
-        Actividad a6 = new Actividad(6, "Tenis", null, 20, null, null, null);
-        Actividad[] todasActividades = new Actividad[]{a3, a4, a5, a6};
+        // DATOS DE PRUEBA
+//        // Se rellena el ActividadesList con las actividades del empleado
+//        Actividad a1 = new Actividad(1, "Futbol", null, 10, null, null, null);
+//        Actividad a2 = new Actividad(2, "Baloncetos", null, 20, null, null, null);
+//        Actividad[] actividades = new Actividad[]{a1, a2};
+//
+//        // Se rellena el NuevasList con todas las demás actividades del centro que pertenece el empleado
+//        Actividad a3 = new Actividad(3, "Ping-Pong", null, 20, null, null, null);
+//        Actividad a4 = new Actividad(4, "Zumba", null, 20, null, null, null);
+//        Actividad a5 = new Actividad(5, "Aerobic", null, 20, null, null, null);
+//        Actividad a6 = new Actividad(6, "Tenis", null, 20, null, null, null);
+//        Actividad[] todasActividades = new Actividad[]{a3, a4, a5, a6};
 
 
         // Se define el modelo que va a tener el Jlist del formulario
@@ -57,19 +59,22 @@ public class ModificarEmpleado {
         ActividadesList.setModel(modelo);
         NuevasList.setModel(modeloNuevas);
 
-        // Se rellena el JList de las actividades del empleado
-        for (int i = 0; i < actividades.length; i++) {
 
-            modelo.addElement(actividades[i].getNombre());
-
-        }
-
-        // Se rellena el JList de TODAS LAS ACTIVIDADES (menos las que ya tiene el empleado...)
-        for (int i = 0; i < todasActividades.length; i++) {
-
-            modeloNuevas.addElement(todasActividades[i].getNombre());
-
-        }
+        // COMENTO ESTO PORQUE SI NO PETA, YA QUE NO EXISTEN LOS ARRAYS DE ACTIVIDADES NI TODASACTIVIDADES(por que
+        // están comentadas arriba).
+//        // Se rellena el JList de las actividades del empleado
+//        for (int i = 0; i < actividades.length; i++) {
+//
+//            modelo.addElement(actividades[i].getNombre());
+//
+//        }
+//
+//        // Se rellena el JList de TODAS LAS ACTIVIDADES (menos las que ya tiene el empleado...)
+//        for (int i = 0; i < todasActividades.length; i++) {
+//
+//            modeloNuevas.addElement(todasActividades[i].getNombre());
+//
+//        }
 
 
         // Botón Atrás
@@ -77,7 +82,7 @@ public class ModificarEmpleado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
             }
         });
@@ -86,6 +91,9 @@ public class ModificarEmpleado {
         ModificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                frame.dispose();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 // Se crea un ArrayList para recoger las actividades del empleado
                 ArrayList<Object> listaActividades = new ArrayList<>(ActividadesList.getModel().getSize());

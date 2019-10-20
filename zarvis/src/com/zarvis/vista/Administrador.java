@@ -16,7 +16,7 @@ public class Administrador {
     private JButton metadatosButton;
 
 
-    public Administrador(String centroSeleccionado) {
+    public Administrador(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
         JFrame frame = new JFrame("Administrador");
         frame.setContentPane(Panel1);
@@ -32,7 +32,7 @@ public class Administrador {
 
                 frame.dispose();
 
-                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion("Empleado");
+                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion(tipoUsuario, nombreUsuario, centroSeleccionado, "Empleado");
 
             }
         });
@@ -44,7 +44,7 @@ public class Administrador {
 
                 frame.dispose();
 
-                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion("Actividad");
+                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion(tipoUsuario, nombreUsuario, centroSeleccionado,"Actividad");
             }
         });
 
@@ -55,7 +55,7 @@ public class Administrador {
 
                 frame.dispose();
 
-                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion("Cliente");
+                AltaBajaModificacion altaBajaModificacion = new AltaBajaModificacion(tipoUsuario, nombreUsuario, centroSeleccionado,"Cliente");
 
             }
         });
@@ -66,7 +66,7 @@ public class Administrador {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
-                eleccCentro eleccCentro = new eleccCentro();
+                eleccCentro eleccCentro = new eleccCentro(tipoUsuario, nombreUsuario);
 
             }
         });
@@ -95,19 +95,19 @@ public class Administrador {
 
                     // Se muestran los metadatos de
 //                    // Se le pasa el nombre de la bbdd
-//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos("nombre_bbdd");
+//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos(tipoUsuario, nombreUsuario,"nombre_bbdd");
                 }
                 else if (centroSeleccionado == "Zabalgana"){
 
                     // Se muestran los metadatos de
 //                    // Se le pasa el nombre de la bbdd
-//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos("nombre_bbdd");
+//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos(tipoUsuario, nombreUsuario,"nombre_bbdd");
                 }
                 else if (centroSeleccionado == "Arriaga"){
 
                     // Se muestran los metadatos de
 //                    // Se le pasa el nombre de la bbdd
-//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos("nombre_bbdd");
+//                    MostrarMetadatos mostrarMetadatos = new MostrarMetadatos(tipoUsuario, nombreUsuario,"nombre_bbdd");
 
 
                 }
@@ -117,14 +117,6 @@ public class Administrador {
 
     }
 
-
-    public Administrador(){
-        JFrame frame = new JFrame("Administrador");
-        frame.setContentPane(Panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
 }
 
 

@@ -26,7 +26,7 @@ public class ModificarActividad {
     private JComboBox IDcomboBox;
 
 
-    public ModificarActividad() {
+    public ModificarActividad(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
             JFrame frame = new JFrame("ModificarActividad");
             frame.setContentPane(PanelPrincipal);
@@ -55,7 +55,8 @@ public class ModificarActividad {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                eleccCentro eleccCentro = new eleccCentro();
+
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }
@@ -67,6 +68,8 @@ public class ModificarActividad {
                 public void actionPerformed(ActionEvent e) {
 
                     frame.dispose();
+
+                    Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                     String idSeleccionado = (String) IDcomboBox.getSelectedItem();
 

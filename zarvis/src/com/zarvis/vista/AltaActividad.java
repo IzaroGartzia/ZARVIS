@@ -23,7 +23,7 @@ public class AltaActividad {
     private JCheckBox ZabalganaCheckBox;
 
 
-    public AltaActividad() {
+    public AltaActividad(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
         JFrame frame = new JFrame("AltaActividad");
         frame.setContentPane(PanelPrincipal);
@@ -38,7 +38,7 @@ public class AltaActividad {
 
                 frame.dispose();
 
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }
@@ -50,6 +50,8 @@ public class AltaActividad {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
+
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 // Se crea un array para recoger los Centros Civicos al que pertenece la actividad
                 CentroCivico[] centrosCivicos = new CentroCivico[3];
@@ -117,6 +119,10 @@ public class AltaActividad {
                 }
 
                 // Se crea una actividad
+
+                /* ********************************************************************************
+                LO COMENTO PORQUE SI NO PETÁ
+
                 Actividad actividad = new Actividad(Integer.parseInt(IDTextField.getText()), NombreTextField.getText(), null,
                                                     Double.parseDouble(PrecioTextField.getText()), DiaTextField.getText(), HoraTextField.getText(),
                                                     centrosCivicos);
@@ -134,6 +140,8 @@ public class AltaActividad {
                     System.out.println(centrosCivicos[i].getName());
 
                 }
+                */
+
 
             }
         });

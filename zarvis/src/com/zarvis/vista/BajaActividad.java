@@ -13,7 +13,7 @@ public class BajaActividad {
     private JButton GuardarButton;
 
 
-        public BajaActividad() {
+        public BajaActividad(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
             JFrame frame = new JFrame("BajaActividad");
             frame.setContentPane(PanelPrincipal);
@@ -45,7 +45,8 @@ public class BajaActividad {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                eleccCentro eleccCentro = new eleccCentro();
+
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }
@@ -56,6 +57,9 @@ public class BajaActividad {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     frame.dispose();
+
+                    Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
+
                     String actividadSeleccionada = (String) ActividadComboBox.getSelectedItem();
 
                     // SE ACCEDE A LA BBDD Y SE ELIMINA LA ACTIVIDAD

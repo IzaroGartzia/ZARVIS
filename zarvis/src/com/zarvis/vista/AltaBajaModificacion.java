@@ -14,7 +14,7 @@ public class AltaBajaModificacion {
     private AltaEmpleado alta;
 
 
-    public AltaBajaModificacion(String elemento) {
+    public AltaBajaModificacion(int tipoUsuario, String nombreUsuario, String centroSeleccionado, String elemento) {
 
         JFrame frame = new JFrame("AltaBajaModificacion");
         frame.setContentPane(Panel1);
@@ -32,16 +32,16 @@ public class AltaBajaModificacion {
                 // Se controla que elemento se quiere dar de alta
                 if(elemento == "Empleado")
                 {
-                    AltaEmpleado altaEmpleado = new AltaEmpleado();
+                    AltaEmpleado altaEmpleado = new AltaEmpleado(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 }
                 else if(elemento == "Actividad")
                 {
-                    AltaActividad altaActividad = new AltaActividad();
+                    AltaActividad altaActividad = new AltaActividad(tipoUsuario, nombreUsuario, centroSeleccionado);
                 }
                 else if(elemento == "Cliente")
                 {
-                    AltaCliente altaCliente = new AltaCliente();
+                    AltaCliente altaCliente = new AltaCliente(tipoUsuario, nombreUsuario, centroSeleccionado);
                 }
 
             }
@@ -56,17 +56,17 @@ public class AltaBajaModificacion {
                 // Se controla que elemento se quiere dar de baja
                 if(elemento == "Empleado")
                 {
-                    BajaEmpleado bajaEmpleado = new BajaEmpleado();
+                    BajaEmpleado bajaEmpleado = new BajaEmpleado(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 }
                 else if(elemento == "Actividad")
                 {
-                    BajaActividad bajaActividad = new BajaActividad();
+                    BajaActividad bajaActividad = new BajaActividad(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 }
                 else if(elemento == "Cliente")
                 {
-                    BajaCliente bajaCliente = new BajaCliente();
+                    BajaCliente bajaCliente = new BajaCliente(tipoUsuario, nombreUsuario, centroSeleccionado);
                 }
 
             }
@@ -81,31 +81,23 @@ public class AltaBajaModificacion {
                 // Se controla que elemento se quiere modificar
                 if(elemento == "Empleado")
                 {
-                    ModificarEmpleado modificarEmpleado = new ModificarEmpleado();
+                    ModificarEmpleado modificarEmpleado = new ModificarEmpleado(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 }
                 else if(elemento == "Actividad")
                 {
-                    ModificarActividad modificarActividad = new ModificarActividad();
+                    ModificarActividad modificarActividad = new ModificarActividad(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 }
                 else if(elemento == "Cliente")
                 {
-                    ModificarCliente modificarCliente = new ModificarCliente();
+                    ModificarCliente modificarCliente = new ModificarCliente(tipoUsuario, nombreUsuario, centroSeleccionado);
                 }
 
             }
         });
     }
 
-    public AltaBajaModificacion() {
-
-        JFrame frame = new JFrame("AltaBajaModificacion");
-        frame.setContentPane(Panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
 }
 
 

@@ -13,7 +13,7 @@ public class BajaEmpleado {
     private JComboBox EmpleadoComboBox;
 
 
-        public BajaEmpleado () {
+        public BajaEmpleado (int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
             JFrame frame = new JFrame("BajaEmpleado");
             frame.setContentPane(PanelPrincipal);
@@ -50,7 +50,7 @@ public class BajaEmpleado {
 
                     frame.dispose();
 
-                    eleccCentro eleccCentro = new eleccCentro();
+                    Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
                 }
@@ -62,6 +62,8 @@ public class BajaEmpleado {
                 public void actionPerformed(ActionEvent e) {
 
                     frame.dispose();
+
+                    Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                     // Se obtiene el Empleado que se ha seleccionado en el JComboBox
                     String empleadoSeleccionado = (String) EmpleadoComboBox.getSelectedItem();

@@ -13,7 +13,7 @@ public class BajaCliente {
     private JComboBox ClienteComboBox;
 
 
-        public BajaCliente() {
+        public BajaCliente(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
 
             JFrame frame = new JFrame("BajaCliente");
             frame.setContentPane(PanelPrincipal);
@@ -46,7 +46,7 @@ public class BajaCliente {
 
                 frame.dispose();
 
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }
@@ -58,6 +58,9 @@ public class BajaCliente {
                 public void actionPerformed(ActionEvent e) {
 
                     frame.dispose();
+
+                    Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
+
                     String dniSeleccionado = (String) ClienteComboBox.getSelectedItem();
 
                     // SE ACCEDE A LA BBDD Y SE ELIMINA EL CLIENTE filtrando por su DNI

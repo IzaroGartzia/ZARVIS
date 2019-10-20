@@ -32,7 +32,7 @@ public class AltaCliente {
     private JPanel panel2;
 
 
-    public AltaCliente() {
+    public AltaCliente(int tipoUsuario, String nombreUsuario, String centroSeleccionado) {
         JFrame frame = new JFrame("AltaCliente");
         frame.setContentPane(PanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +45,7 @@ public class AltaCliente {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
-                eleccCentro eleccCentro = new eleccCentro();
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
 
             }
@@ -57,6 +57,8 @@ public class AltaCliente {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
+
+                Administrador administrador = new Administrador(tipoUsuario, nombreUsuario, centroSeleccionado);
 
                 // Se recogen los datos que se han introducido
                 String dni = dni_text.getText();
